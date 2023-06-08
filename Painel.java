@@ -9,7 +9,7 @@ public class Painel extends Canvas implements Runnable{
     private Cobra cobrinha;
     private Ponto ponto;
     public Painel(){
-        ponto = new Ponto(new Random().nextInt(0,Tela.width-20), new Random().nextInt(0,Tela.width-20));
+        ponto = new Ponto(new Random().nextInt(0,Tela.width-20)-Nodo.nodoSize, new Random().nextInt(0,Tela.width-20)-Nodo.nodoSize);
         cobrinha = new Cobra();
         addKeyListener(new TecladoAdp(cobrinha));
     }
@@ -64,16 +64,11 @@ public class Painel extends Canvas implements Runnable{
         }
         Rectangle col = new Rectangle(cobrinha.getCobra().get(0).getCordX(),cobrinha.getCobra().get(0).getCordY(),Nodo.nodoSize,Nodo.nodoSize);
         if(col.intersects(new Rectangle(ponto.getCordXPonto(),ponto.getCordYPonto(),Nodo.nodoSize,Nodo.nodoSize))){
-            ponto.setCordXPonto(new Random().nextInt(Nodo.nodoSize,500));
-            ponto.setCordYPonto(new Random().nextInt(Nodo.nodoSize,500));
+            ponto.setCordXPonto(new Random().nextInt(Nodo.nodoSize,Tela.width)-Nodo.nodoSize);
+            ponto.setCordYPonto(new Random().nextInt(Nodo.nodoSize,Tela.width)-Nodo.nodoSize);
             ponto.incrementPontos(1);
             cobrinha.addSize();
             System.out.println("Pontos: " + ponto.getPontuacao());
-        }
-        for (int i = cobrinha.getCobra().size()-1; i > 0  ; i--) {
-            if(col.intersects(new Rectangle(cobrinha.getCobra().get(i).getCordX(),cobrinha.getCobra().get(i).getCordY(),Nodo.nodoSize-6,Nodo.nodoSize-6))){
-                System.out.println("Perdeu");
-            }
         }
     }
 

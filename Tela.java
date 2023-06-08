@@ -8,7 +8,7 @@ public class Tela extends JFrame{
         painel = new Painel();
         add(painel);
         pack();
-        setTitle("tela");
+        setTitle("Cobrinha");
         setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -17,5 +17,4 @@ public class Tela extends JFrame{
         Thread td = new Thread(painel);
         td.start();
     }
-
 }

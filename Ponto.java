@@ -1,4 +1,4 @@
-public class Ponto extends Nodo {
+public class Ponto extends Nodo implements Pontuacao {
 
     private int pontuacao;
     private int cordXPonto,cordYPonto;
@@ -29,7 +29,13 @@ public class Ponto extends Nodo {
         this.pontuacao = pontuacao;
     }
 
+    @Override
     public void incrementPontos(int ponto){
         this.setPontuacao(this.getPontuacao()+ponto);
+    }
+
+    @Override
+    public void incrementPontos() {
+        this.setPontuacao(this.getPontuacao()+1);       
     }
 }

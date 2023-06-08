@@ -9,8 +9,8 @@ public class Cobra implements KeyListener{
     public Cobra(){
         direction  = new boolean[4];
         cobra = new ArrayList<Nodo>();
-        for (int i = 0; i < 1; i++) {
-            cobra.add(new Nodo(0,0));
+        for (int i = 0; i < 3; i++) {
+            cobra.add(new Ponto(0,0));
         }
     }
     public ArrayList<Nodo> getCobra() {
@@ -21,7 +21,7 @@ public class Cobra implements KeyListener{
     }
     public void addSize(){
         Nodo tam = cobra.get(cobra.size()-1);
-        cobra.add(new Nodo(tam.getCordX(), tam.getCordY()));
+        cobra.add(new Ponto(tam.getCordX(), tam.getCordY()));
     }
     
     @Override

@@ -1,4 +1,4 @@
-public class Nodo {
+public abstract class Nodo {
     private int cordX, cordY;
     static final int nodoSize = 16;
     
