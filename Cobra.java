@@ -26,40 +26,46 @@ public class Cobra implements KeyListener{
     
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            for (int i = 0; i < direction.length; i++) {
-                if(i == 2){
-                    direction[i] = true;
-                    
-                }else{
-                    direction[i] = false;
-                }
 
-            }
-        }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            for (int i = 0; i < direction.length; i++) {
-                if(i == 3){
-                    direction[i] = true;
-                }else{
-                    direction[i] = false;
+
+        switch (e.getKeyCode()){
+            case KeyEvent.VK_UP:
+                for (int i = 0; i < direction.length; i++) {
+                    if(i == 2){
+                        direction[i] = true;
+
+                    }else{
+                        direction[i] = false;
+                    }
                 }
-            }
-        }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            for (int i = 0; i < direction.length; i++) {
-                if(i == 1){
-                    direction[i] = true;
-                }else{
-                    direction[i] = false;
+                break;
+            case KeyEvent.VK_DOWN:
+                for (int i = 0; i < direction.length; i++) {
+                    if(i == 3){
+                        direction[i] = true;
+                    }else{
+                        direction[i] = false;
+                    }
                 }
-            }
-        }else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            for (int i = 0; i < direction.length; i++) {
-                if(i == 0){
-                    direction[i] = true;
-                }else{
-                    direction[i] = false;
+                break;
+            case KeyEvent.VK_LEFT:
+                for (int i = 0; i < direction.length; i++) {
+                    if(i == 1){
+                        direction[i] = true;
+                    }else{
+                        direction[i] = false;
+                    }
                 }
-            }
+                break;
+            case KeyEvent.VK_RIGHT:
+                for (int i = 0; i < direction.length; i++) {
+                    if(i == 0){
+                        direction[i] = true;
+                    }else{
+                        direction[i] = false;
+                    }
+                }
+                break;
         }
     }
     @Override
