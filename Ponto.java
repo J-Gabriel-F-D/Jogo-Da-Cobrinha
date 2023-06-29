@@ -1,6 +1,6 @@
 public class Ponto extends Nodo implements Pontuacao {
 
-    private int pontuacao;
+    static int pontuacao;
     private int cordXPonto,cordYPonto;
 
     public Ponto(int cordX, int cordY) {
@@ -8,6 +8,10 @@ public class Ponto extends Nodo implements Pontuacao {
         this.cordXPonto = cordX;
         this.cordYPonto = cordY;
         pontuacao = 0;
+    }
+    public Ponto(){
+        this.cordXPonto = 0;
+        this.cordYPonto = 0;
     }
     
     public int getCordYPonto() {
@@ -26,16 +30,14 @@ public class Ponto extends Nodo implements Pontuacao {
         return pontuacao;
     }
     public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
+        Ponto.pontuacao = pontuacao;
     }
-
-    @Override
-    public void incrementPontos(int ponto){
-        this.setPontuacao(this.getPontuacao()+ponto);
-    }
-
     @Override
     public void incrementPontos() {
-        this.setPontuacao(this.getPontuacao()+1);       
+        this.setPontuacao(this.getPontuacao()+1);
+    }
+    @Override
+    public void incrementPontos(int ponto) {
+        this.setPontuacao(this.getPontuacao()+ponto);    
     }
 }

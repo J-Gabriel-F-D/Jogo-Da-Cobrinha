@@ -3,7 +3,6 @@ import javax.swing.JFrame;
 public class Tela extends JFrame{
     static final int width = 512, height = 512;
     private Painel painel;
-
     public Tela(){
         painel = new Painel();
         add(painel);

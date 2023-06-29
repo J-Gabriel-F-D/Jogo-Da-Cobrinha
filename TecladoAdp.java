@@ -2,7 +2,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class TecladoAdp extends KeyAdapter{
-    Cobra c;
+    private Cobra c;
     public TecladoAdp(Cobra c) {
         this.c = c;
     }

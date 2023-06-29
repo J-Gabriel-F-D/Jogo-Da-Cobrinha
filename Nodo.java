@@ -6,7 +6,10 @@ public abstract class Nodo {
         this.cordX = cordX;
         this.cordY = cordY;
     }
-    
+    public Nodo (){
+        this.cordX = 0;
+        this.cordY = 0;
+    }
     public int getNodoSize() {
         return nodoSize;
     }

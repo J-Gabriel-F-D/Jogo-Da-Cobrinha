@@ -20,14 +20,11 @@ public class Cobra implements KeyListener{
         return direction;
     }
     public void addSize(){
-        Nodo tam = cobra.get(cobra.size()-1);
-        cobra.add(new Ponto(tam.getCordX(), tam.getCordY()));
+        cobra.add(new Ponto());
     }
     
     @Override
-    public void keyPressed(KeyEvent e) {
-
-
+    public void keyPressed(KeyEvent e) { // posição 0 = direita; posição 1 = esquerda; posição 2 = cima; posição 3 = baixo 
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
                 for (int i = 0; i < direction.length; i++) {
